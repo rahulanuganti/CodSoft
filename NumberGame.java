@@ -11,16 +11,16 @@ public class NumberGame{
             int guess = random.nextInt(100)+1;
             int currAttem = 0;
             int guessLimit = 4;
-            int userGuess;
             System.out.println("I've selected a number between 1 and 100. Try to guess the number?");
             while(currAttem<guessLimit){
                 System.out.println("Enter your guess:");
-                userGuess=scan.nextInt();
+                int userGuess=scan.nextInt();
+                scan.nextLine();
                 currAttem++;
                 if(userGuess==guess){
                     System.out.println("Congrats, You guessed the right number "+guess+" in "+currAttem+" attempts.");
                     score++;
-                    break;
+                    continue;
                 }
                 else if(userGuess>guess){
                     System.out.println("Too high! Try again");
